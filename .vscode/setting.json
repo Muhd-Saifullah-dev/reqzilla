@@ -1,0 +1,7 @@
+{
+  "prisma.disableAutoDetect": false,
+  "prisma.clientVersion": "5.16.2",
+  "prisma.validate.enable": false,
+  "prisma.validateOnSave.enable": false,
+  "prisma.languageserver.enable": false
+}
