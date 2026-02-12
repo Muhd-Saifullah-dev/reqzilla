@@ -26,7 +26,7 @@ export const currentUser=async()=>{
             }
         })
 
-        console.log("user in  current useer",user)
+
         return user
     } catch (error) {
         console.log(`error in fetching current user :${error}`)
