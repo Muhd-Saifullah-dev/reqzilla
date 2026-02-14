@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { getworkspace, createWorkspaces, getWorkspaceById } from "../actions";
 
-export function useWorkspaces() {
+export function useGetWorkspaces() {
   return useQuery({
     queryKey: ["workspaces"],
     queryFn: async () => getworkspace(),
