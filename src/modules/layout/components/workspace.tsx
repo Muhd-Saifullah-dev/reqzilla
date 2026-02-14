@@ -12,12 +12,12 @@ import {
 import { Hint } from "@/components/ui/hint";
 import { Button } from "@/components/ui/button";
 import { Loader, Plus, User } from "lucide-react";
-import { useWorkspaces } from "@/modules/workspace/hooks/workspace";
+import { useGetWorkspaces } from "@/modules/workspace/hooks/workspace";
 import { useWorkspaceStore } from "../store";
 import CreateWorkspace from "./create-workspace";
 const Workspace = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const { data: workspaces, isLoading } = useWorkspaces();
+  const { data: workspaces, isLoading } = useGetWorkspaces();
   const { selectedWorkspace, setSelectedWorkspace } = useWorkspaceStore();
   useEffect(() => {
     if (workspaces && workspaces.length > 0 && !selectedWorkspace) {
