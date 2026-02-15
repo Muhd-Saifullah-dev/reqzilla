@@ -117,4 +117,28 @@ model Collection {
   workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @default(now()) @updatedAt
+  requests    Request[]
+}
+
+enum REQUEST_METHOD {
+  GET
+  POST
+  PATCH
+  PUT
+  DELETE
+}
+
+model Request {
+  id           String         @id @default(cuid())
+  name         String
+  method       REQUEST_METHOD @default(GET)
+  url          String
+  parameters   Json?
+  headers      Json?
+  body         Json?
+  response     Json?
+  collectionId String
+  collection   Collection     @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @default(now()) @updatedAt
 }
